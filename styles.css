@@ -1,0 +1,279 @@
+/* CSS by Christina Carrasquilla at The Brand Girls' Bakery */
+
+/* Imported Fonts */
+@font-face {
+    font-family: CookPsychesans;
+    src: url(fonts/CookPsychesans.otf);
+}
+@font-face {
+    font-family: MangroveSansBold;
+    src: url(fonts/Mangrove\ Sans\ Bold.otf);
+}
+@font-face {
+    font-family: MangroveSansLight;
+    src: url(fonts/Mangrove\ Sans\ Light.otf);
+}
+@font-face {
+    font-family: MangroveSansRegular;
+    src: url(fonts/Mangrove\ Sans\ Regular.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Root Variables */
+:root {
+    /* layout */
+    --container-width: 1200px;
+    --content-max-width: 80ch;
+    --border-radius: .5rem;
+    --transition: all 0.5s ease;
+
+    /* color */
+    --color-bg: var(--cloud);
+    --color-text:var(--earth);
+    --color-accent:var(--terracotta);
+    --color-muted: var(--olive);
+    --color-link: var(--prickly-pear);
+    --color-border:var(--midnight);
+
+    /* theme */
+    --color-dark: var(--midnight);
+    --color-light:var(--cloud);
+    
+    /* color palette */
+    --olive:#A09958;
+    --lgt-prickly-pear: #7E5475;
+    --prickly-pear: #512A45;
+    --terracotta: #A9431E;
+    --sunset: #FEAD77;
+    --earth: #4E3629;
+    --midnight: #131E29;
+    --cloud: #F1F0E2;
+    
+    /* shadows */
+    --inner-shadow: 0 0 10 var(--cloud);
+    --drop-shadow: 0 0 10 var(--midnight);
+    
+    /* font-family */
+    --font-heading: CookPsychesans, serif;
+    --font-subhead: MangroveSansBold, sans-serif;
+    --font-body: "Montserrat", sans-serif;
+    --font-ui: "Montserrat", sans-serif;
+    
+    /* font-size */
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+
+    /* font-weight */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-loose: 1.75;
+
+    /* letter Spacing */
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.05em;
+}
+
+/* Global Style- Mobile First */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* header */
+header, #explore, footer {
+    background-color: var(--cloud);
+}
+header {
+    display: grid;
+}
+
+/* nav */
+nav {
+    grid-row:1;
+    justify-items: end;
+}
+nav ul {
+    width: 100%;
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow:hidden;
+    text-align:center;
+    max-height: 0;
+    background-color: var(--prickly-pear);
+}
+nav li a {
+    display:block;
+    font-family: var(--font-subhead);
+    font-size: var(--font-size-md);
+    padding:1rem;
+    font-weight:var(--font-weight-bold);
+    text-decoration:none;
+    color: var(--cloud);
+    transition: var(--transition);
+}
+nav a:hover, nav input:hover {
+    background-color: var(--cloud);
+    color: var(--prickly-pear);
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+/* hamburger backgrouond */
+label {
+    background-color: var(--prickly-pear);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 1rem;
+}
+/* hamburger middle line */
+label span {
+    background-color: var(--cloud);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: var(--transition);
+    width: 2rem;
+}
+/* hamburger top and bottom line */
+label span:before, label span:after {
+    background: var(--cloud);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: var(--transition);
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+    display:none;
+}
+/* adds height during dropdown */
+input:checked ~ ul {
+    max-height: 500px;
+}
+/* middle line disappear */
+input:checked ~ label span {
+    background: transparent;
+}
+/* rotates top line for X */
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+/* rotates bottome line for X */
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+/* hamburger X location inside label*/
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+    left: 0;
+}
+a[title="PHXDW Homepage"] {
+    position: absolute;
+    top:0;
+    left:0;
+}
+a[title="PHXDW Homepage"]:hover {
+    background-color: transparent;
+    transition: none;
+}
+
+/* countdown */
+#countdown {
+    background-color: var(--olive);
+}
+
+/* grow */
+#grow {
+    background-color: var(--prickly-pear);
+}
+
+/* connect */
+#connect {
+    background-color: var(--terracotta);
+}
+
+/* spnsors */
+#sponsors {
+    background-color: var(--midnight);
+}
+
+/* Media Queries for Medium  */
+
+/* Media Queries for Large */
