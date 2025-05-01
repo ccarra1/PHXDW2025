@@ -532,17 +532,17 @@ small {
     #countdown {
         background-image: url(images/PHXDW_saguaro-banner.png);
         background-size: cover;
+        position: relative;
     }
     .countdown {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        position: relative;
         background-color: rgb(160, 153, 88, 0.6);
     }
     img[src="images/countdown-dust-devil.svg"] {
         display: block;
         position: absolute;
-        right:-3rem;
+        right:0;
         bottom: 15rem;
     }
     #explore, #grow, #connect {
@@ -584,7 +584,7 @@ small {
     img[src="images/connect-bowls.png"] {
         display: block;
         position: absolute;
-        right: -1rem;
+        right: 0;
         bottom: 25rem;
     }
 }
