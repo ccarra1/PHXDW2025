@@ -170,7 +170,7 @@ img[src="images/squiggle.svg"] {
     position: relative;
     bottom: 1rem;
 }
-img[src="images/header-peaks.svg"], img[src="images/countdown-dust-devil.svg"], img[src="images/grow-waves.svg"], img[src="images/connect-bowls.png"], img[src="images/footer-sponsor-twisted04.svg"] {
+.no-mobile {
     display: none;
 }
 
@@ -287,6 +287,7 @@ a[title="PHXDW Homepage"]:hover {
     position: relative;
     background-color: var(--earth);
     width: 75%;
+    padding: var(--padding-lg);
     margin: 3rem auto;
     box-shadow:  var(--inner-shadow), var(--drop-shadow);
 }
@@ -460,6 +461,10 @@ figcaption {
     text-align: center;
     margin: var(--padding-base);
 }
+#sponsors dd {
+    position: relative;
+    bottom: 2rem;
+}
 small {
     display: block;
     font-size: .85em;
@@ -546,6 +551,7 @@ small {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         background-color: rgb(160, 153, 88, 0.6);
+        text-shadow: var(--drop-shadow);
     }
     img[src="images/countdown-dust-devil.svg"] {
         display: block;
@@ -606,6 +612,8 @@ small {
     }
     #sponsors {
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     img[src="images/footer-sponsor-twisted04.svg"] {
         display: block;
@@ -615,3 +623,48 @@ small {
     }
 }
 /* Media Queries for Large */
+@media screen and (min-width:1440px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    h1 {
+        grid-column: 1/-1;
+    }
+    #design-week-dates {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    #conference-dates {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    a[title="Register for PHXDW 2025"] {
+        grid-column:1/-1;
+    }
+    img[src="images/header-peaks.svg"] {
+        bottom: 25rem;
+    }
+    #explore h2, #explore p, #grow h2, #grow p, #connect h2, #connect p {
+        grid-column: 2/6;
+    }
+    #craft, #register, #instagram {
+        grid-column: 2/3;
+    }
+    #grounded, #speak, #facebook {
+        grid-column: 3/4;
+    }
+    #together, #sponsor, #linkedin {
+        grid-column: 4/5;
+        grid-row: 3/4;
+    }
+    #branch, #volunteer, #newsletter {
+        grid-column: 5/6;
+        grid-row: 3/4;
+    }
+    img[src="images/phxdw2025-horizontal-logo-olive-rooted.svg"] {
+        max-width: 1200px;
+        display: block;
+        margin: 0 auto;
+    }
+}
