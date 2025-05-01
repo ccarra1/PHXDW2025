@@ -71,8 +71,6 @@ table {
 /* Root Variables */
 :root {
     /* layout */
-    --container-width: 1200px;
-    --content-max-width: 80ch;
     --border-radius: .5rem;
     --transition: all 0.35s ease;
 
