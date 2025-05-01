@@ -1,6 +1,8 @@
 /* CSS by Christina Carrasquilla at The Brand Girls' Bakery */
 
 /* Imported Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: CookPsychesans;
     src: url(fonts/CookPsychesans.otf);
@@ -17,7 +19,6 @@
     font-family: MangroveSansRegular;
     src: url(fonts/Mangrove\ Sans\ Regular.otf);
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
@@ -73,7 +74,7 @@ table {
     --container-width: 1200px;
     --content-max-width: 80ch;
     --border-radius: .5rem;
-    --transition: all 0.5s ease;
+    --transition: all 0.35s ease;
 
     /* color */
     --color-bg: var(--cloud);
@@ -98,22 +99,28 @@ table {
     --cloud: #F1F0E2;
     
     /* shadows */
-    --inner-shadow: 0 0 10 var(--cloud);
-    --drop-shadow: 0 0 10 var(--midnight);
+    --inner-shadow: 0 0 1px var(--cloud);
+    --drop-shadow: 0 0 20px #000000;
     
+    /* spacing */
+    --padding-base: 1rem 0;
+    --padding-lg: 3rem 0;
+    --margin-base: 1rem 0;
+    --margin-lg: 3rem 0;
+
     /* font-family */
-    --font-heading: CookPsychesans, serif;
-    --font-subhead: MangroveSansBold, sans-serif;
+    --font-heading: MangroveSansBold, sans-serif;
     --font-body: "Montserrat", sans-serif;
     --font-ui: "Montserrat", sans-serif;
+    --font-accent: CookPsychesans, serif;
     
     /* font-size */
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-md: 1.125rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
+    --font-size-sm: 1rem;
+    --font-size-base: 1.25rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 1.75rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 2.5rem;
     --font-size-3xl: 3rem;
 
     /* font-weight */
@@ -122,12 +129,12 @@ table {
     --font-weight-medium: 500;
     --font-weight-bold: 700;
 
-    /* line Heights */
+    /* line heights */
     --line-height-tight: 1.2;
     --line-height-normal: 1.5;
     --line-height-loose: 1.75;
 
-    /* letter Spacing */
+    /* letter spacing */
     --letter-spacing-tight: -0.02em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.05em;
@@ -145,12 +152,17 @@ table {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+header, #countdown, #explore, #grow, #connect, footer, #sponsors {
+    padding: var(--padding-lg);
+}
 /* header */
 header, #explore, footer {
     background-color: var(--cloud);
 }
 header {
     display: grid;
+    text-align: center;
+    padding-top: 0;
 }
 
 /* nav */
@@ -170,9 +182,9 @@ nav ul {
 }
 nav li a {
     display:block;
-    font-family: var(--font-subhead);
+    font-family: var(--font-heading);
     font-size: var(--font-size-md);
-    padding:1rem;
+    padding: 1rem;
     font-weight:var(--font-weight-bold);
     text-decoration:none;
     color: var(--cloud);
@@ -185,18 +197,17 @@ nav a:hover, nav input:hover {
 nav label {
     cursor: pointer;
     display: inline-block;
-    padding: 1.5rem;
     user-select: none;
 }
 /* hamburger backgrouond */
-label {
+nav label {
     background-color: var(--prickly-pear);
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     margin: 1rem;
 }
 /* hamburger middle line */
-label span {
+nav label span {
     background-color: var(--cloud);
     display: block;
     height: .25rem;
@@ -205,7 +216,7 @@ label span {
     width: 2rem;
 }
 /* hamburger top and bottom line */
-label span:before, label span:after {
+nav label span:before, nav label span:after {
     background: var(--cloud);
     content: '';
     display: block;
@@ -214,33 +225,37 @@ label span:before, label span:after {
     transition: var(--transition);
     width: 100%;
 }
-label span:before {
+nav label span:before {
     top: .75rem;
 }
-label span:after {
+nav label span:after {
     top: -.75rem;
 }
-input {
+nav input {
     display:none;
 }
 /* adds height during dropdown */
-input:checked ~ ul {
+nav input:checked ~ ul {
     max-height: 500px;
+    transition: var(--transition);
 }
 /* middle line disappear */
-input:checked ~ label span {
+nav input:checked ~ nav label span {
     background: transparent;
+    transition: var(--transition);
 }
 /* rotates top line for X */
-input:checked ~ label span:before {
+nav input:checked ~ nav label span:before {
     transform: rotate(-45deg);
+    transition: var(--transition);
 }
 /* rotates bottome line for X */
-input:checked ~ label span:after {
+nav input:checked ~ nav label span:after {
     transform: rotate(45deg);
+    transition: var(--transition);
 }
 /* hamburger X location inside label*/
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+nav input:checked ~ nav label:not(.steps) span:before, nav input:checked ~ nav label:not(.steps) span:after {
     top: 0;
     left: 0;
 }
@@ -256,22 +271,186 @@ a[title="PHXDW Homepage"]:hover {
 
 /* countdown */
 #countdown {
-    background-color: var(--olive);
+    background-color: var(--earth);
+    color: var(--cloud);
+}
+.countdown {
+    width: 75%;
+    margin: 3rem auto;
+    background-color: var(--earth);
+    box-shadow:  var(--inner-shadow), var(--drop-shadow);
+}
+.time-box {
+    text-align: center;
+}
+.time-box span {
+    display: block;
+    font-family: var(--font-accent);
+    font-size: 5em;
+    color: var(--cloud);
+}
+.time-box label {
+    position: relative;
+    bottom: 2rem;
+    font-size: var(--font-size-sm);
+    color: var(--cloud);
+    text-transform: uppercase;
+    letter-spacing:var(--letter-spacing-wide);
+}
+
+  /* Visually hidden text for screen readers only */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* explore */
+figure {
+    margin: var(--margin-lg);
+}
+figure img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* grow */
 #grow {
     background-color: var(--prickly-pear);
+    color: var(--cloud);
+}
+#grow a {
+    background-image: url(images/circle02.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 6;
+    margin: 1rem auto;
+    font-family: var(--font-accent);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--earth);
+}
+/* sponsors */
+#sponsors {
+    background-color: var(--midnight);
 }
 
 /* connect */
 #connect {
     background-color: var(--terracotta);
+    color: var(--cloud);
+}
+#connect a {
+    background-color: var(--terracotta);
+    box-shadow: var(--drop-shadow);
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 1rem auto;
+    text-decoration: none;
+}
+#connect span {
+    color: transparent;
+    height: 1;
+    width: 1;
+}
+#connect svg {
+    position: relative;
+    top: 35px;
+    left: 35px;
+}
+footer img {
+    padding: var(--padding-lg);
 }
 
-/* spnsors */
-#sponsors {
-    background-color: var(--midnight);
+/* text */
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    color: var(--earth);
+    padding:var(--padding-lg);
+}
+h1 span {
+    display: inline-block;
+    margin: var(--margin-lg);
+    color: transparent;
+    background-image: url(images/rooted.svg);
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 99px;
+    background-size: cover;
+    background-position: center;
+    vertical-align: middle;
+}
+header dl {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    text-transform: uppercase;
+    padding: var(--padding-base);
+}
+header dl::after {
+    content: url(images/squiggle.svg);
+    background-repeat: no-repeat;
+}
+h2, #countdown p {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+    text-align: center;
+    padding: 0 1rem;
+}
+p, figcaption, small {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    padding: 0 1rem;
+}
+figcaption {
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+#sponsors dl {
+    color: var(--cloud);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    text-align: center;
+    margin: var(--padding-base);
+}
+#sponsors dd {
+    text-indent: -9999px;
+}
+#anderson, #brand-girls, #factor1 {
+    background-image: url(images/footer-anderson-logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 1rem auto;
+}
+#brand-girls {
+    background-image: url(images/footer-Brand-Girls-Bakery-Logo.png);
+}
+#factor1 {
+    background-image: url(images/footer-Factor1-logo.png);
+}
+small {
+    display: block;
+    font-size: .85em;
+    text-align: center;
+    margin: var(--margin-base);
 }
 
 /* Media Queries for Medium  */
