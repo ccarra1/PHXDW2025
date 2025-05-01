@@ -170,7 +170,7 @@ img[src="images/squiggle.svg"] {
     position: relative;
     bottom: 1rem;
 }
-img[src="images/header-peaks.svg"], img[src="images/countdown-dust-devil.svg"], img[src="images/grow-waves.svg"], img[src="images/connect-bowls.png"] {
+img[src="images/header-peaks.svg"], img[src="images/countdown-dust-devil.svg"], img[src="images/grow-waves.svg"], img[src="images/connect-bowls.png"], img[src="images/footer-sponsor-twisted04.svg"] {
     display: none;
 }
 
@@ -414,6 +414,27 @@ header dl {
     text-transform: uppercase;
     padding: var(--padding-base);
 }
+a[title="Register for PHXDW 2025"] {
+    width: 25%;
+    min-width: 300px;
+    background-color: var(--terracotta);
+    color: var(--cloud);
+    text-transform: uppercase;
+    font-family: var(--font-accent);
+    font-size: var(--font-size-3xl);
+    border-radius: var(--border-radius);
+    margin: 1rem auto;
+    padding: var(--padding-base);
+    text-decoration: none;
+    box-shadow: var(--drop-shadow);
+    line-height: var(--line-height-loose);
+    transition: var(--transition);
+}
+a[title="Register for PHXDW 2025"]:hover {
+    background-color: var(--midnight);
+    transform: scale(1.15);
+
+}
 h2, #countdown p {
     font-family: var(--font-heading);
     text-transform: uppercase;
@@ -438,24 +459,6 @@ figcaption {
     text-transform: uppercase;
     text-align: center;
     margin: var(--padding-base);
-}
-#sponsors dd {
-    text-indent: -9999px;
-}
-#anderson, #brand-girls, #factor1 {
-    background-image: url(images/footer-anderson-logo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    width: 200px;
-    height: 200px;
-    margin: 1rem auto;
-}
-#brand-girls {
-    background-image: url(images/the-brand-girls-bakery.svg);
-}
-#factor1 {
-    background-image: url(images/footer-Factor1-logo.png);
 }
 small {
     display: block;
@@ -482,6 +485,7 @@ small {
     nav a:hover, nav input:hover {
         background-color: var(--midnight);
         color: var(--cloud);
+        transform: scale(1.5);
     }
     nav label {
         background-color: transparent;
@@ -497,16 +501,20 @@ small {
         top: 1.5rem;
         left:.5rem;
         display: grid;
-        grid-template-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
         gap: 1rem;
         max-height: auto;
     }
-    nav a:hover, nav input:hover {
+    nav label span, nav input {
+        display:none;
+    }
+    nav a[title="Register"]{
         background-color: var(--prickly-pear);
         color: var(--cloud);
     }
-    nav label span, nav input {
-        display:none;
+    nav a[title="Register"]:hover {
+            background-color: var(--midnight);
+            color: var(--cloud);
     }
     h1 {
         margin: var(--margin-lg);
@@ -586,6 +594,15 @@ small {
         position: absolute;
         right: 0;
         bottom: 25rem;
+    }
+    #sponsors {
+        position: relative;
+    }
+    img[src="images/footer-sponsor-twisted04.svg"] {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -6rem;
     }
 }
 /* Media Queries for Large */

@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <h1>GET <br><span id="rooted">ROOTED</span> <br>AT PHXDW</h1>
+        <h1>GET <br><span id="rooted">ROOTED</span> <br>AT PHOENIX DESIGN WEEK 2025</h1>
         <dl>
             <dt>Design Week:</dt>
             <dd>Sept 19-26</dd>
@@ -33,11 +33,13 @@
             <dd>Sept 19-20</dd>
         </dl>
         <img src="images/squiggle.svg" alt="">
+        <a href="https://phxdw-2025-rooted-conference.eventbrite.com" title="Register for PHXDW 2025" target="_blank">register</a>
         <nav aria-label="Main site navigation">
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle"><span></span></label>
             <ul>
                 <li><a href="index.html" title="PHXDW Homepage"><img src="images/phxdw2025-stacked-logo-colorful.svg" alt="PHXDW 2025 Home" width="101"></a></li>
+                <li><a href="https://phxdw-2025-rooted-conference.eventbrite.com" title="Register" target="_blank">register</a></li>
                 <li><a href="#explore" title="explore PHXDW 2025">explore</a></li>
                 <li><a href="#grow" title="grow with PHXDW 2025">grow</a></li>
                 <li><a href="#connect" title="connect with PHXDW 2025">connect</a></li>
@@ -48,26 +50,26 @@
     <main>
         <section id="countdown" aria-labelledby="countdown-heading">
             <img src="images/countdown-dust-devil.svg" alt="">
-            <h2 id="countdown-heading">Countdown to registration opening</h2>
+            <h2 id="countdown-heading">Countdown to save 35% Off Registration</h2>
             <div class="countdown">
                 <div class="time-box" role="group" aria-label="Days remaining">
                     <span id="days" aria-live="polite">00</span>
-                    <label for="days">Days</label>
+                    <label>Days</label>
                 </div>
             
                 <div class="time-box" role="group" aria-label="Hours remaining">
                     <span id="hours" aria-live="polite">00</span>
-                    <label for="hours">Hours</label>
+                    <label>Hours</label>
                 </div>
             
                 <div class="time-box" role="group" aria-label="Minutes remaining">
                     <span id="minutes" aria-live="polite">00</span>
-                    <label for="minutes">Minutes</label>
+                    <label>Minutes</label>
                 </div>
             
                 <div class="time-box" role="group" aria-label="Seconds remaining">
                     <span id="seconds" aria-live="polite">00</span>
-                    <label for="seconds">Seconds</label>
+                    <label>Seconds</label>
                 </div>
             </div>
             <p>Get ready to reconnect, create, and grow at Arizona's biggest design celebration.</p>
@@ -96,7 +98,7 @@
             <img src="images/grow-waves.svg" alt="">
             <h2 id="grow-heading">grow</h2>
             <p>Here's where the real growth begins. Phoenix Design Week 2025 is your chance to invest in your craft, your connections, and your community. Register to expand your network and your skills. Apply to speak and share the lessons that have shaped your journey. Sponsor the event—or a student—and help cultivate the next generation of creative leaders. Volunteer and root yourself deeper in Arizona's thriving design scene. Whatever path you choose, this is your moment to grow bold, grow brave, and grow together.</p>
-            <a href="#" id="register" title="Register for PHXDW 2025 Conference">Register</a>
+            <a href="https://phxdw-2025-rooted-conference.eventbrite.com" target="_blank" id="register" title="Register for PHXDW 2025 Conference">Register</a>
             <a href="#" id="speak" title="Apply to Speak at PHXDW 2025">Speak</a>
             <a href="#" id="sponsor" title="Sponsor the event or a student">Sponsor</a>
             <a href="#" id="volunteer" title="Volunteer for PHXDW 2025">Volunteer</a>
@@ -134,24 +136,25 @@
     <footer>
         <img src="images/phxdw2025-horizontal-logo-olive-rooted.svg" alt="Phoenix Design Week 2025 -Rooted- presented by AIGA Arizona">
         <section id="sponsors" aria-labelledby="sponsors-heading">
+            <img src="images/footer-sponsor-twisted04.svg" width="100" alt="">
             <h2 id="sponsors-heading" class="visually-hidden">Sponsors</h2>
             <dl>
                 <dt>Visual Identity by</dt>
-                <dd id="anderson">Anderson</dd>
+                <dd><img src="images/AA-Primary Logo_With Tag_Rev.png" width="200" alt="Anderson Advertising &amp Public Relations"></dd>
             </dl>
             <dl>
                 <dt>Web by</dt>
-                <dd id="brand-girls">The Brand Girls' Bakery</dd>
+                <dd><img src="images/the-brand-girls-bakery.svg" width="200" alt="The Brand Girls' Bakery"></dd>
             </dl>
             <dl>
                 <dt>Powered by</dt>
-                <dd id="factor1">Factor1</dd>
+                <dd><img src="images/footer-Factor1-logo.png" width="200" alt="factor1"></dd>
             </dl>
         </section>
         <small>&copy; 2025 Phoenix Design Week. All rights reserved.</small>
     </footer>
 <script>
-    const targetDate = new Date("2025-05-01T00:00:01").getTime();
+    const targetDate = new Date("2025-05-31T11:59:59").getTime();
 
     function updateCountdown() {
     const now = new Date().getTime();
