@@ -164,6 +164,15 @@ header {
     text-align: center;
     padding-top: 0;
 }
+img[src="images/squiggle.svg"] {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 1rem;
+}
+img[src="images/header-peaks.svg"], img[src="images/countdown-dust-devil.svg"], img[src="images/grow-waves.svg"], img[src="images/connect-bowls.png"] {
+    display: none;
+}
 
 /* nav */
 nav {
@@ -199,7 +208,7 @@ nav label {
     display: inline-block;
     user-select: none;
 }
-/* hamburger backgrouond */
+/* hamburger background */
 nav label {
     background-color: var(--prickly-pear);
     border-radius: var(--border-radius);
@@ -275,9 +284,10 @@ a[title="PHXDW Homepage"]:hover {
     color: var(--cloud);
 }
 .countdown {
+    position: relative;
+    background-color: var(--earth);
     width: 75%;
     margin: 3rem auto;
-    background-color: var(--earth);
     box-shadow:  var(--inner-shadow), var(--drop-shadow);
 }
 .time-box {
@@ -339,6 +349,10 @@ figure img {
     font-weight: var(--font-weight-bold);
     text-decoration: none;
     color: var(--earth);
+    transition: var(--transition);
+}
+#grow a:hover, #connect a:hover {
+    transform: scale(1.15);
 }
 /* sponsors */
 #sponsors {
@@ -359,6 +373,7 @@ figure img {
     text-align: center;
     margin: 1rem auto;
     text-decoration: none;
+    transition: var(--transition);
 }
 #connect span {
     color: transparent;
@@ -399,10 +414,6 @@ header dl {
     text-transform: uppercase;
     padding: var(--padding-base);
 }
-header dl::after {
-    content: url(images/squiggle.svg);
-    background-repeat: no-repeat;
-}
 h2, #countdown p {
     font-family: var(--font-heading);
     text-transform: uppercase;
@@ -441,7 +452,7 @@ figcaption {
     margin: 1rem auto;
 }
 #brand-girls {
-    background-image: url(images/footer-Brand-Girls-Bakery-Logo.png);
+    background-image: url(images/the-brand-girls-bakery.svg);
 }
 #factor1 {
     background-image: url(images/footer-Factor1-logo.png);
@@ -452,7 +463,129 @@ small {
     text-align: center;
     margin: var(--margin-base);
 }
-
 /* Media Queries for Medium  */
-
+@media screen and (min-width:1024px) {
+    nav {
+        margin: var(--margin-lg);
+    }
+    nav li a {
+        display:block;
+        font-family: var(--font-heading);
+        font-size: var(--font-size-md);
+        padding: 1rem;
+        font-weight:var(--font-weight-bold);
+        text-decoration:none;
+        border-radius: var(--border-radius);
+        color: var(--prickly-pear);
+        transition: var(--transition);
+    }
+    nav a:hover, nav input:hover {
+        background-color: var(--midnight);
+        color: var(--cloud);
+    }
+    nav label {
+        background-color: transparent;
+        padding: 0;
+        margin:0;
+        cursor: pointer;
+        display: inline-block;
+        user-select: none;
+    }
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        left:.5rem;
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+        gap: 1rem;
+        max-height: auto;
+    }
+    nav a:hover, nav input:hover {
+        background-color: var(--prickly-pear);
+        color: var(--cloud);
+    }
+    nav label span, nav input {
+        display:none;
+    }
+    h1 {
+        margin: var(--margin-lg);
+    }
+    h1 span {
+        width: 585px;
+        height: 165px;
+        background-size: cover;
+        background-position: center;
+        vertical-align: middle;
+    }
+    header {
+        position: relative;
+    }
+    header dt, header dd {
+        display: inline-block;
+    }
+    img[src="images/header-peaks.svg"] {
+        display:block;
+        position: absolute;
+        bottom: 5rem;
+    }
+    #countdown {
+        background-image: url(images/PHXDW_saguaro-banner.png);
+        background-size: cover;
+    }
+    .countdown {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        position: relative;
+        background-color: rgb(160, 153, 88, 0.6);
+    }
+    img[src="images/countdown-dust-devil.svg"] {
+        display: block;
+        position: absolute;
+        right:-3rem;
+        bottom: 15rem;
+    }
+    #explore, #grow, #connect {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    #explore h2, #explore p, #grow h2, #grow p, #connect h2, #connect p {
+        grid-column: 2/6;
+    }
+    #craft, #register, #instagram {
+        grid-column: 2/4;
+        grid-row:3/4;
+    }
+    #grounded, #speak, #facebook {
+        grid-column: 4/6;
+        grid-row: 3/4;
+    }
+    #together, #sponsor, #linkedin {
+        grid-column: 2/4;
+        grid-row: 4/5;
+    }
+    #branch, #volunteer, #newsletter {
+        grid-column: 4/6;
+        grid-row: 4/5;
+    }
+    #grow {
+        background-image: url(images/grow-background-prickly-pear-cactus.png);
+        background-size: cover;
+        position: relative;
+    }
+    img[src="images/grow-waves.svg"] {
+        display: block;
+        position: absolute;
+        top: -15rem;
+    }
+    #connect {
+        position: relative;
+    }
+    img[src="images/connect-bowls.png"] {
+        display: block;
+        position: absolute;
+        right: -1rem;
+        bottom: 25rem;
+    }
+}
 /* Media Queries for Large */
