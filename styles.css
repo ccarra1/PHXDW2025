@@ -162,8 +162,10 @@ header {
     text-align: center;
     padding-top: 0;
 }
-img[src="images/squiggle.svg"] {
+header dl::after {
+    content: url(images/squiggle2.svg) ;
     display: block;
+    width: 200px;
     margin: 0 auto;
     position: relative;
     bottom: 1rem;
@@ -174,7 +176,6 @@ img[src="images/squiggle.svg"] {
 
 /* nav */
 nav {
-    grid-row:1;
     justify-items: end;
 }
 nav ul {
@@ -340,8 +341,12 @@ figure img {
     grid-template-rows: 1fr 1fr;
 }
 #pricing dl::after {
-    content: url(images/double-wave.svg);
+    content: url(images/squiggle.svg);
+    width: 200px;
     display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 3rem;
 }
 #pricing dd {
     grid-row: 1/2;
@@ -459,8 +464,7 @@ header dl, #pricing dl {
 a[title="Register for PHXDW 2025"] {
     display: block;
     text-align: center;
-    width: 50%;
-    min-width: 300px;
+    width: 300px;
     background-color: var(--terracotta);
     color: var(--cloud);
     text-transform: uppercase;
@@ -491,6 +495,9 @@ p, figcaption, small {
     line-height: var(--line-height-normal);
     margin: 1rem;
 }
+strong {
+    font-weight: var(--font-weight-bold);
+}
 figcaption {
     font-weight: var(--font-weight-bold);
     text-align: center;
@@ -505,7 +512,7 @@ figcaption {
 }
 #sponsors dd {
     position: relative;
-    bottom: 2rem;
+    bottom: 1.5rem;
 }
 small {
     display: block;
@@ -560,6 +567,7 @@ small {
         grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
         gap: 1rem;
         max-height: auto;
+        padding: 0 25px;
     }
     nav label span, nav input {
         display:none;
@@ -571,6 +579,10 @@ small {
     nav a[title="Register"]:hover {
             background-color: var(--midnight);
             color: var(--cloud);
+    }
+    a[title="PHXDW Homepage"] {
+        top:-20px;
+        left:25px;
     }
     h1 {
         margin: var(--margin-lg);
@@ -589,32 +601,38 @@ small {
         display: inline-block;
     }
     img[src="images/header-peaks.svg"] {
-        display:block;
+        display: block;
         position: absolute;
-        bottom: 5rem;
+        bottom: 15rem;
     }
     #countdown {
         background-image: url(images/PHXDW_saguaro-banner.png);
         background-size: cover;
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr 800px 1fr;
+    }
+    #countdown h2, #countdown p {
+        grid-column: 2/3;
     }
     .countdown {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         background-color: rgb(160, 153, 88, 0.6);
         text-shadow: var(--drop-shadow);
+        grid-column: 2/3;
     }
     img[src="images/countdown-dust-devil.svg"] {
         display: block;
         position: absolute;
         right:0;
-        bottom: 15rem;
+        bottom: 30rem;
     }
     #explore, #grow, #connect, #pricing {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: 1fr 200px 200px 200px 200px 1fr;
     }
-    #explore h2, #grow h2, #connect h2, #pricing h2, #explore p, #grow p, #connect p, #pricing p {
+    #explore h2, #grow h2, #connect h2, #explore p, #grow p, #connect p, #pricing h2, #pricing p, #pricing a {
         grid-column: 2/6;
     }
     #member {
@@ -631,9 +649,6 @@ small {
     }
     #student-non-member {
         grid-column: 5/7;
-    }
-    a[title="Register for PHXDW 2025"] {
-        grid-column:1/-1;
     }
     #craft, #register,#instagram {
         grid-row: 3/4;
@@ -668,7 +683,7 @@ small {
         display: block;
         position: absolute;
         right: 0;
-        bottom: 25rem;
+        bottom: 50rem;
     }
     footer {
         position: relative;
@@ -700,21 +715,31 @@ small {
 @media screen and (min-width:1440px) {
     header {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 450px 450px 1fr;
     }
     h1 {
-        grid-column: 1/-1;
+        grid-column: 2/4;
     }
     #design-week-dates {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-    #conference-dates {
         grid-column: 2/3;
         grid-row: 3/4;
     }
+    #conference-dates {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    header a {
+        grid-row:4/5;
+        grid-column: 2/4;
+    }
     img[src="images/header-peaks.svg"] {
         bottom: 25rem;
+    }
+    #countdown {
+        grid-template-columns: 1fr 1000px 1fr;
+    }
+    #explore, #grow, #connect {
+        grid-template-columns: 1fr 225px 225px 225px 225px 1fr;
     }
     #explore h2, #explore p, #grow h2, #grow p, #connect h2, #connect p {
         grid-column: 2/6;
@@ -733,20 +758,27 @@ small {
         grid-column: 5/6;
         grid-row: 3/4;
     }
+    #pricing {
+        grid-template-columns: 1fr 200px 200px 200px 200px 200px 1fr;
+        column-gap:3rem;
+    }
+    #pricing h2, #pricing p, #pricing a {
+        grid-column: 2/7;
+    }
     #member {
-        grid-column: 1/2;
+        grid-column: 2/3;
     }   
     #non-member {
-        grid-column: 2/3;
-    }
-    #affiliate {
         grid-column: 3/4;
     }
-    #student-member {
+    #affiliate {
         grid-column: 4/5;
     }
-    #student-non-member {
+    #student-member {
         grid-column: 5/6;
+    }
+    #student-non-member {
+        grid-column: 6/7;
     }
     img[src="images/phxdw2025-horizontal-logo-olive-rooted.svg"] {
         max-width: 1200px;
