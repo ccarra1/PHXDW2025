@@ -176,6 +176,7 @@ header dl::after {
 
 /* nav */
 nav {
+    display: grid;
     justify-items: end;
 }
 nav ul {
