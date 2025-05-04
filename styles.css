@@ -531,7 +531,7 @@ small {
     padding:var(--padding-base);
 }
 /* Media Queries for Medium  */
-@media screen and (min-width:1024px) {
+@media screen and (min-width:915px) {
     nav {
         margin: var(--margin-lg);
     }
@@ -611,7 +611,7 @@ small {
         background-size: cover;
         position: relative;
         display: grid;
-        grid-template-columns: 1fr 800px 1fr;
+        grid-template-columns: 1fr 700px 1fr;
     }
     #countdown h2, #countdown p {
         grid-column: 2/3;
@@ -684,7 +684,7 @@ small {
         display: block;
         position: absolute;
         right: 0;
-        bottom: 50rem;
+        top: -15rem;
     }
     footer {
         position: relative;
@@ -713,7 +713,7 @@ small {
     }
 }
 /* Media Queries for Large */
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1300px) {
     header {
         display: grid;
         grid-template-columns: 1fr 450px 450px 1fr;
