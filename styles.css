@@ -1,6 +1,6 @@
-/* CSS by Christina Carrasquilla at The Brand Girls' Bakery */
+/**********************  CSS by Christina Carrasquilla at The Brand Girls' Bakery ********************* */
 
-/* Imported Fonts */
+/**********************  Imported Fonts ********************* */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
@@ -18,6 +18,10 @@
 @font-face {
     font-family: MangroveSansRegular;
     src: url(fonts/Mangrove\ Sans\ Regular.otf);
+}
+@font-face {
+    font-family: MangroveScriptRegular;
+    src: url(fonts//Mangrove\ Script\ Regular.otf);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -44,7 +48,7 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/**********************  HTML5 display-role reset for older browsers ********************* */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -68,77 +72,74 @@ table {
     border-spacing: 0;
 }
 
-/* Root Variables */
+/**********************  Root Variables ********************* */
 :root {
-    /* layout */
-    --border-radius: .5rem;
+    /**********************  layout ********************* */
+    --border-radius: 50px;
     --transition: all 0.35s ease;
 
-    /* color */
-    --color-bg: var(--cloud);
-    --color-text:var(--earth);
-    --color-accent:var(--terracotta);
-    --color-muted: var(--olive);
-    --color-link: var(--prickly-pear);
-    --color-border:var(--midnight);
+    /**********************  color ********************* */
+    --color-bg: var(--bloom);
+    --color-text:var(--root);
+    --color-accent:var(--copper);
+    --color-muted: var(--cholla);
+    --color-link: var(--dusk);
+    --color-border:var(--coal);
 
-    /* theme */
-    --color-dark: var(--midnight);
-    --color-light:var(--cloud);
+    /**********************  theme ********************* */
+    --color-dark: var(--coal);
+    --color-light:var(--bloom);
     
-    /* color palette */
-    --olive:#A09958;
-    --lgt-prickly-pear: #7E5475;
-    --prickly-pear: #512A45;
-    --terracotta: #A9431E;
-    --sunset: #FEAD77;
-    --earth: #4E3629;
-    --midnight: #131E29;
-    --cloud: #F1F0E2;
+    /**********************  color palette ********************* */
+    --cholla:#A09958;
+    --mauve: #7E5475;
+    --dusk: #512A45;
+    --copper: #A9431E;
+    --citrus: #FEAD77;
+    --root: #4E3629;
+    --coal: #131E29;
+    --bloom: #F1F0E2;
+    --white:#ffffff;
     
-    /* shadows */
-    --inner-shadow: 0 0 1px var(--cloud);
-    --drop-shadow: 0 0 20px #000000;
-    
-    /* spacing */
+    /**********************  spacing ********************* */
     --padding-base: 1rem 0;
     --padding-lg: 3rem 0;
     --margin-base: 1rem 0;
     --margin-lg: 3rem 0;
 
-    /* font-family */
-    --font-heading: MangroveSansBold, sans-serif;
+    /**********************  font-family ********************* */
+    --font-heading: CookPsychesans, serif;
     --font-body: "Montserrat", sans-serif;
     --font-ui: "Montserrat", sans-serif;
-    --font-accent: CookPsychesans, serif;
+    --font-accent: MangroveSansBold, sans-serif;
     
-    /* font-size */
+    /**********************  font-size ********************* */
     --font-size-sm: 1rem;
     --font-size-base: 1.25rem;
     --font-size-md: 1.5rem;
     --font-size-lg: 1.75rem;
     --font-size-xl: 2rem;
-    --font-size-2xl: 2.5rem;
-    --font-size-3xl: 3rem;
+    --font-size-2xl: 2.25rem;
+    --font-size-3xl: 2.5rem;
 
-    /* font-weight */
+    /**********************  font-weight ********************* */
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
 
-    /* line heights */
+    /**********************  line heights ********************* */
     --line-height-tight: 1.2;
     --line-height-normal: 1.5;
     --line-height-loose: 1.75;
 
-    /* letter spacing */
+    /* ********************* letter spacing ********************* */
     --letter-spacing-tight: -0.02em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.05em;
 }
 
-/* Global Style- Mobile First */
+/********************* Global Style- Mobile First *********************/
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -150,34 +151,58 @@ table {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-header, #countdown, #explore, #grow, #connect, footer, #sponsors {
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, footer {
     padding: var(--padding-lg);
 }
-/* header */
-header, #explore, footer {
-    background-color: var(--cloud);
+/**********************  Visually hidden text for screen readers only ********************* */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
-header {
-    display: grid;
+/**********************  announcements ********************* */
+#announcements {
+    background-color: var(--coal);
+    grid-row: 1;
+}
+#announcements p {
+    color: var(--bloom);
+}
+#announcements img {
+    width: 45px;
+    position: absolute;
+    z-index: 1;
+}
+img[src="images/Quinn.svg"] {
+    top:.6rem;
+    left:.65rem;
+}
+img[src="images/bird-feet.svg"] {
+    top:.5rem;
+    right:1rem;
+}
+#announcements p {
+    font-family: MangroveSansBold;
+    font-size: var(--font-size-sm);
     text-align: center;
-    padding-top: 0;
+    text-transform: uppercase;
 }
-header dl::after {
-    content: url(images/squiggle2.svg) ;
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    position: relative;
-    bottom: 1rem;
-}
-.no-mobile {
-    display: none;
-}
-
-/* nav */
+/**********************  nav ********************* */
 nav {
+    background-color: var(--white);
     display: grid;
     justify-items: end;
+    grid-row: 2;
+    position: relative;
 }
 nav ul {
     width: 100%;
@@ -187,37 +212,46 @@ nav ul {
     overflow:hidden;
     text-align:center;
     max-height: 0;
-    background-color: var(--prickly-pear);
+    background-color: var(--dusk);
 }
 nav li a {
     display:block;
-    font-family: var(--font-heading);
+    font-family: var(--font-accent);
     font-size: var(--font-size-md);
     padding: 1rem;
     font-weight:var(--font-weight-bold);
     text-decoration:none;
-    color: var(--cloud);
+    color: var(--bloom);
     transition: var(--transition);
 }
 nav a:hover, nav input:hover {
-    background-color: var(--cloud);
-    color: var(--prickly-pear);
+    background-color: var(--bloom);
+    color: var(--dusk);
 }
 nav label {
     cursor: pointer;
     display: inline-block;
     user-select: none;
 }
-/* hamburger background */
+a[title="PHXDW Homepage"] {
+    position: absolute;
+    top:0;
+    left:0;
+}
+a[title="PHXDW Homepage"]:hover {
+    background-color: transparent;
+    transition: none;
+}
+/**********************  hamburger background ********************* */
 nav label {
-    background-color: var(--prickly-pear);
+    background-color: var(--dusk);
     border-radius: var(--border-radius);
     padding: 1.5rem 1rem;
     margin: 1rem;
 }
-/* hamburger middle line */
+/**********************  hamburger middle line ********************* */
 nav label span {
-    background-color: var(--cloud);
+    background-color: var(--white);
     display: block;
     height: .25rem;
     position: relative;
@@ -225,9 +259,9 @@ nav label span {
     width: 2rem;
     text-indent: -9999px;
 }
-/* hamburger top and bottom line */
+/**********************  hamburger top and bottom line ********************* */
 nav label span:before, nav label span:after {
-    background: var(--cloud);
+    background: var(--white);
     content: '';
     display: block;
     height: 100%;
@@ -244,168 +278,177 @@ nav label span:after {
 nav input {
     display:none;
 }
-/* adds height during dropdown */
+/**********************  adds height during dropdown ********************* */
 nav input:checked ~ ul {
     max-height: 500px;
     transition: var(--transition);
 }
-/* middle line disappear */
+/* ********************* middle line disappear ********************* */
 nav input:checked ~ nav label span {
     background: transparent;
     transition: var(--transition);
 }
-/* rotates top line for X */
+/**********************  rotates top line for X ********************* */
 nav input:checked ~ nav label span:before {
     transform: rotate(-45deg);
     transition: var(--transition);
 }
-/* rotates bottome line for X */
+/**********************  rotates bottome line for X ********************* */
 nav input:checked ~ nav label span:after {
     transform: rotate(45deg);
     transition: var(--transition);
 }
-/* hamburger X location inside label*/
+/**********************  hamburger X location inside label ********************* */
 nav input:checked ~ nav label:not(.steps) span:before, nav input:checked ~ nav label:not(.steps) span:after {
     top: 0;
     left: 0;
 }
-a[title="PHXDW Homepage"] {
-    position: absolute;
-    top:0;
-    left:0;
-}
-a[title="PHXDW Homepage"]:hover {
-    background-color: transparent;
-    transition: none;
-}
-
-/* countdown */
-#countdown {
-    background-color: var(--earth);
-    color: var(--cloud);
-}
-.countdown {
-    position: relative;
-    background-color: var(--earth);
-    width: 75%;
-    padding: var(--padding-lg);
-    margin: 3rem auto;
-    box-shadow:  var(--inner-shadow), var(--drop-shadow);
-}
-.time-box {
+/**********************  header ********************* */
+header {
+    background-color: var(--bloom);
+    display: grid;
     text-align: center;
+    grid-row: 3;
 }
-.time-box span {
+header dl::after {
+    content: url(images/squiggle-citrus.svg);
     display: block;
-    font-family: var(--font-accent);
-    font-size: 5em;
-    color: var(--cloud);
-}
-.time-box label {
+    margin: 1rem auto;
     position: relative;
-    bottom: 2rem;
-    font-size: var(--font-size-sm);
-    color: var(--cloud);
-    text-transform: uppercase;
-    letter-spacing:var(--letter-spacing-wide);
+    bottom: 1rem;
+}
+.no-mobile {
+    display: none;
 }
 
-  /* Visually hidden text for screen readers only */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+/**********************  main ********************* */
+main {
+    grid-row: 4;
+    display: grid;
 }
 
-/* explore */
-figure {
-    margin: var(--margin-lg);
-}
-figure img {
-    display: block;
-    margin: 0 auto;
+/**********************  about ********************* */
+#about {
+    background-image:url(images/cactus.png) ;
+    grid-row: 1;
+    color: var(--bloom);
 }
 
-/* pricing */
+/**********************  pricing ********************* */
 #pricing {
-    background-color: var(--sunset);
-    color:var(--midnight);
+    background-color: var(--coal);
+    color:var(--bloom);
+    grid-row: 2;
 }
 #pricing dl {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
 }
-#pricing dl::after {
-    content: url(images/squiggle.svg);
-    width: 200px;
+#pricing dl::after  {
+    content: url(images/squiggle-citrus.svg);
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
     position: relative;
-    bottom: 3rem;
+    bottom: 1rem;
 }
 #pricing dd {
     grid-row: 1/2;
 }
 #pricing dt {
     grid-row: 2/3;
-    position: relative;
-    bottom: 3rem;
 }
-/* grow */
-#grow {
-    background-color: var(--prickly-pear);
-    color: var(--cloud);
-}
-#grow a {
-    background-image: url(images/circle02.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+/**********************  SPECIAL pricing ********************* */
+#early-bird {
     display: block;
-    width: 200px;
-    height: 200px;
+    font-family: MangroveScriptRegular;
     text-align: center;
-    line-height: 6;
-    margin: 1rem auto;
-    font-family: var(--font-accent);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    text-decoration: none;
-    color: var(--earth);
-    transition: var(--transition);
+    color: var(--citrus);
+    font-size: var(--font-size-lg);
+    transform: rotate(-10deg);
     position: relative;
+    top:3rem;
+    right:4rem;
 }
-.coming-soon::before {
-    content: "coming soon";
-    background-color: var(--cloud);
-    color: var(--midnight);
-    font-family: var(--font-body);
-    font-size: var(--font-size-sm);
-    position: absolute;
-    right:5rem;
-    top: .5rem;
-    line-height: 1.5;
-    padding: 2px 5px;
-    border-radius: var(--border-radius);
-    transform: rotate(-15deg);
-}
-#grow a:hover, #connect a:hover {
-    transform: scale(1.15);
+.price {
+    text-decoration: line-through;
+    text-decoration-color: var(--citrus);
+    text-decoration-thickness: 4px;
+    font-size: var(--font-size-base);
 }
 
-/* connect */
-#connect {
-    background-color: var(--terracotta);
-    color: var(--cloud);
+/**********************  speakers ********************* */
+#speakers {
+    background-color: var(--bloom);
+    color: var(--dusk);
+    grid-row:3;
 }
-#connect a {
-    background-color: var(--terracotta);
-    box-shadow: var(--drop-shadow);
+#speakers h3::after {
+    content: url(images/squiggle-dusk.svg);
+    display: block;
+    margin: 1rem auto;
+    position: relative;
+    bottom: 1rem;
+}
+#keynotes section {
+    margin: 3rem auto;
+    text-align: center;
+}
+#emcee dd {
+    text-align: center;
+}
+.role {
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+}
+/**********************  schedule ********************* */
+#schedule {
+    background-color: var(--dusk);
+    color: var(--bloom);
+    background-image: url(images/grow-background-prickly-pear-cactus.png);
+    grid-row:4;
+}
+.dates {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--bloom);
+}
+.dates::after {
+    content: url(images/squiggle-bloom.svg);
+    display: block;
+    margin: 1rem auto;
+    position: relative;
+    bottom: 1rem;
+}
+#schedule ul {
+    background-color: rgba(20, 30, 41, .6);
+    padding: .5rem;
+}
+#schedule li {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
+}
+/**********************  design-week ********************* */
+#design-week {
+    background-color: var(--copper);
+    color: var(--bloom);
+    grid-row:5;
+}
+#design-week a {
+
+}
+/********************** get-involved ********************* */
+#get-involved {
+    background-color: var(--root);
+    background-image: url(images/wood.png);
+    color: var(--bloom);
+    grid-row: 6;
+}
+#get-involved a {
+    background-color: var(--citrus);
     display: block;
     width: 200px;
     height: 200px;
@@ -414,30 +457,33 @@ figure img {
     text-decoration: none;
     transition: var(--transition);
 }
-#connect svg {
-    position: relative;
-    top: 2rem;
+
+/**********************  footer ********************* */
+footer {
+    grid-row: 5;
 }
 footer img {
     padding: var(--padding-lg);
+    grid-row: 5;
 }
-
-/* sponsors */
-#sponsors {
-    background-color: var(--midnight);
+#sponsors-partners {
+    background-color: var(--dusk);
 }
-#sponsors dd {
+#sponsors-partners dd {
     transition: var(--transition);
 }
-#sponsors dd:hover {
+#sponsors-partners dd:hover {
     transform: scale(1.15);
 }
+#connect {
+    background-color: var(--mauve);
+}
 
-/* text */
+/**********************  text ********************* */
 h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-accent);
     font-size: var(--font-size-3xl);
-    color: var(--earth);
+    color: var(--root);
     padding:var(--padding-lg);
 }
 h1 span {
@@ -453,7 +499,7 @@ h1 span {
     vertical-align: middle;
 }
 header dl, #pricing dl {
-    font-family: var(--font-heading);
+    font-family: var(--font-accent);
     font-size: var(--font-size-2xl);
     text-transform: uppercase;
     padding: var(--padding-base);
@@ -462,31 +508,17 @@ header dl, #pricing dl {
     font-size: var(--font-size-lg);
     text-align: center;
 }
-a[title="Register for PHXDW 2025"] {
-    display: block;
-    text-align: center;
-    width: 300px;
-    background-color: var(--terracotta);
-    color: var(--cloud);
-    text-transform: uppercase;
-    font-family: var(--font-accent);
-    font-size: var(--font-size-3xl);
-    border-radius: var(--border-radius);
-    margin: 5rem auto;
-    padding: var(--padding-base);
-    text-decoration: none;
-    box-shadow: var(--drop-shadow);
-    line-height: var(--line-height-loose);
-    transition: var(--transition);
-}
-a[title="Register for PHXDW 2025"]:hover {
-    background-color: var(--midnight);
-    transform: scale(1.15);
-}
-h2, #countdown p {
+h2 {
     font-family: var(--font-heading);
     text-transform: uppercase;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    padding: 0 1rem;
+} 
+h3, h4, .tagline {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--font-size-lg);
     text-align: center;
     padding: 0 1rem;
 }
@@ -496,6 +528,33 @@ p, figcaption, small {
     line-height: var(--line-height-normal);
     margin: 1rem;
 }
+a[title="Register for PHXDW 2025"], a[title="host an event"] {
+    display: block;
+    text-align: center;
+    width: 90%;
+    background-color: var(--copper);
+    color: var(--bloom);
+    text-transform: uppercase;
+    font-family: var(--font-accent);
+    font-size: var(--font-size-xl);
+    border-radius: var(--border-radius);
+    margin: 5rem auto;
+    padding: var(--padding-base);
+    text-decoration: none;
+    line-height: var(--line-height-loose);
+    transition: var(--transition);
+}
+a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
+    background-color: var(--coal);
+    transform: scale(1.15);
+}
+a[title="host an event"] {
+    background-color: var(--coal);
+}
+#pricing a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
+    background-color: var(--citrus);
+    color: var(--coal);
+}
 strong {
     font-weight: var(--font-weight-bold);
 }
@@ -503,34 +562,22 @@ figcaption {
     font-weight: var(--font-weight-bold);
     text-align: center;
 }
-#sponsors dl {
-    color: var(--cloud);
-    font-family: var(--font-heading);
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    text-align: center;
-    margin: var(--padding-base);
-}
-#sponsors dd {
-    position: relative;
-    bottom: 1.5rem;
-}
 small {
     display: block;
     font-size: .85em;
     text-align: center;
     margin: var(--margin-base);
 }
-#explore p, #grow p, #connect p{
+#pricing p, #speakers p, #schedule p, #design-week p {
     padding: 3rem 0;
 }
-#pricing h2 {
-    padding:var(--padding-lg);
+/**********************  Media Queries for announcement imgs  ********************* */
+@media screen and (max-width:425px) {
+    #announcements img {
+        visibility: hidden;
+    }
 }
-#pricing p {
-    padding:var(--padding-base);
-}
-/* Media Queries for Medium  */
+/**********************  Media Queries for Medium  ********************* */
 @media screen and (min-width:915px) {
     nav {
         margin: var(--margin-lg);
@@ -543,12 +590,12 @@ small {
         font-weight:var(--font-weight-bold);
         text-decoration:none;
         border-radius: var(--border-radius);
-        color: var(--prickly-pear);
+        color: var(--dusk);
         transition: var(--transition);
     }
     nav a:hover, nav input:hover {
-        background-color: var(--midnight);
-        color: var(--cloud);
+        background-color: var(--coal);
+        color: var(--bloom);
         transform: scale(1.5);
     }
     nav label {
@@ -574,12 +621,12 @@ small {
         display:none;
     }
     nav a[title="Register"]{
-        background-color: var(--prickly-pear);
-        color: var(--cloud);
+        background-color: var(--dusk);
+        color: var(--bloom);
     }
     nav a[title="Register"]:hover {
-            background-color: var(--midnight);
-            color: var(--cloud);
+            background-color: var(--coal);
+            color: var(--bloom);
     }
     a[title="PHXDW Homepage"] {
         top:-20px;
@@ -606,34 +653,17 @@ small {
         position: absolute;
         bottom: 15rem;
     }
-    #countdown {
-        background-image: url(images/PHXDW_saguaro-banner.png);
-        background-size: cover;
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 700px 1fr;
-    }
-    #countdown h2, #countdown p {
-        grid-column: 2/3;
-    }
-    .countdown {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        background-color: rgb(160, 153, 88, 0.6);
-        text-shadow: var(--drop-shadow);
-        grid-column: 2/3;
-    }
     img[src="images/countdown-dust-devil.svg"] {
         display: block;
         position: absolute;
         right:0;
         bottom: 30rem;
     }
-    #explore, #grow, #connect, #pricing {
+    #pricing {
         display: grid;
         grid-template-columns: 1fr 200px 200px 200px 200px 1fr;
     }
-    #explore h2, #grow h2, #connect h2, #explore p, #grow p, #connect p, #pricing h2, #pricing p, #pricing a {
+    #pricing p, #pricing a {
         grid-column: 2/6;
     }
     #member {
@@ -651,33 +681,12 @@ small {
     #student-non-member {
         grid-column: 5/7;
     }
-    #craft, #register,#instagram {
-        grid-row: 3/4;
-        grid-column: 2/4;
-    }
-    #grounded, #speak, #facebook {
-        grid-row:3/4;
-        grid-column: 4/6;
-    }
-    #together, #sponsor, #linkedin {
-        grid-row: 4/5;
-        grid-column: 2/4;
-    }
-    #branch, #volunteer, #newsletter {
-        grid-row: 4/5;
-        grid-column: 4/6;
-    }
-    #grow {
-        background-image: url(images/grow-background-prickly-pear-cactus.png);
-        background-size: cover;
-        position: relative;
-    }
     img[src="images/grow-waves.svg"] {
         display: block;
         position: absolute;
         top: -15rem;
     }
-    #connect {
+    #get-involved {
         position: relative;
     }
     img[src="images/connect-bowls.png"] {
@@ -695,11 +704,6 @@ small {
         left: 0;
         top: -14rem;
     }
-    #sponsors {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
     img[src="images/footer-sponsor-twisted04.svg"] {
         display: block;
         position: absolute;
@@ -712,7 +716,7 @@ small {
         line-height: var(--line-height-loose);
     }
 }
-/* Media Queries for Large */
+/**********************  Media Queries for Large ********************* */
 @media screen and (min-width:1300px) {
     header {
         display: grid;
@@ -735,29 +739,6 @@ small {
     }
     img[src="images/header-peaks.svg"] {
         bottom: 25rem;
-    }
-    #countdown {
-        grid-template-columns: 1fr 1000px 1fr;
-    }
-    #explore, #grow, #connect {
-        grid-template-columns: 1fr 225px 225px 225px 225px 1fr;
-    }
-    #explore h2, #explore p, #grow h2, #grow p, #connect h2, #connect p {
-        grid-column: 2/6;
-    }
-    #craft, #register, #instagram {
-        grid-column: 2/3;
-    }
-    #grounded, #speak, #facebook {
-        grid-column: 3/4;
-    }
-    #together, #sponsor, #linkedin {
-        grid-column: 4/5;
-        grid-row: 3/4;
-    }
-    #branch, #volunteer, #newsletter {
-        grid-column: 5/6;
-        grid-row: 3/4;
     }
     #pricing {
         grid-template-columns: 1fr 200px 200px 200px 200px 200px 1fr;
@@ -787,3 +768,56 @@ small {
         margin: 0 auto;
     }
 }
+/* countdown 
+#countdown {
+    background-color: var(--root);
+    color: var(--bloom);
+}
+.countdown {
+    position: relative;
+    background-color: var(--root);
+    width: 75%;
+    padding: var(--padding-lg);
+    margin: 3rem auto;
+}
+.time-box {
+    text-align: center;
+}
+.time-box span {
+    display: block;
+    font-family: var(--font-accent);
+    font-size: 5em;
+    color: var(--bloom);
+}
+.time-box label {
+    position: relative;
+    bottom: 2rem;
+    font-size: var(--font-size-sm);
+    color: var(--bloom);
+    text-transform: uppercase;
+    letter-spacing:var(--letter-spacing-wide);
+}
+
+MEDIUM
+    #countdown {
+        background-image: url(images/PHXDW_saguaro-banner.png);
+        background-size: cover;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 700px 1fr;
+    }
+    #countdown h2, #countdown p {
+        grid-column: 2/3;
+    }
+    .countdown {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: rgb(160, 153, 88, 0.6);
+        grid-column: 2/3;
+    }
+
+LARGE
+    #countdown {
+        grid-template-columns: 1fr 1000px 1fr;
+    }
+*/
