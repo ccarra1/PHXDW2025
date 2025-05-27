@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: CookPsychesans;
-    src: url(fonts/CookPsychesans.woff2);
+    src: url(fonts/CookPsychesans.ttf);
 }
 @font-face {
     font-family: MangroveSansBold;
@@ -340,9 +340,9 @@ main {
 
 /**********************  about ********************* */
 #about {
-    background-image:url(images/cactus.png) ;
+    background-color: var(--cholla);
     grid-row: 1;
-    color: var(--bloom);
+    color: var(--coal);
 }
 
 /**********************  pricing ********************* */
@@ -417,7 +417,6 @@ main {
 #schedule {
     background-color: var(--dusk);
     color: var(--bloom);
-    background-image: url(images/grow-background-prickly-pear-cactus.png);
     grid-row:4;
 }
 .dates {
@@ -435,10 +434,6 @@ main {
     width: 124px;
     height: 16px;
 }
-#schedule ul {
-    background-color: rgba(20, 30, 41, .6);
-    padding: .5rem;
-}
 #schedule li {
     font-family: var(--font-accent);
     text-transform: uppercase;
@@ -454,21 +449,9 @@ main {
 /********************** get-involved ********************* */
 #get-involved {
     background-color: var(--root);
-    background-image: url(images/wood.png);
     color: var(--bloom);
     grid-row: 6;
 }
-#get-involved a {
-    background-color: var(--citrus);
-    display: block;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    margin: 1rem auto;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
 /**********************  footer ********************* */
 footer {
     grid-row: 5;
@@ -542,7 +525,7 @@ p, figcaption, small {
     line-height: var(--line-height-normal);
     margin: 1rem;
 }
-a[title="Register for PHXDW 2025"], a[title="host an event"] {
+a[title="Register for PHXDW 2025"], a[title="host an event"], #get-involved a {
     display: block;
     text-align: center;
     width: 90%;
@@ -558,12 +541,19 @@ a[title="Register for PHXDW 2025"], a[title="host an event"] {
     line-height: var(--line-height-loose);
     transition: var(--transition);
 }
-a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
+a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover, #get-involved a:hover {
     background-color: var(--coal);
     transform: var(--transform);
 }
 a[title="host an event"] {
     background-color: var(--coal);
+}
+#get-involved a {
+    background-color: var(--citrus);
+    color: var(--coal);
+}
+#get-involved a:hover {
+    color: var(--citrus);
 }
 #pricing a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
     background-color: var(--citrus);
