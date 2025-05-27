@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: CookPsychesans;
-    src: url(fonts/CookPsychesans.otf);
+    src: url(fonts/CookPsychesans.woff), url(fonts/CookPsychesans.woff2);
 }
 @font-face {
     font-family: MangroveSansBold;
