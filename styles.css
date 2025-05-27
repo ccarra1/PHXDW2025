@@ -76,6 +76,7 @@ table {
 :root {
     /**********************  layout ********************* */
     --border-radius: 50px;
+    --transform: scale(1.2);
     --transition: all 0.35s ease;
 
     /**********************  color ********************* */
@@ -114,13 +115,13 @@ table {
     --font-accent: MangroveSansBold, sans-serif;
     
     /**********************  font-size ********************* */
-    --font-size-sm: 1rem;
-    --font-size-base: 1.25rem;
-    --font-size-md: 1.5rem;
-    --font-size-lg: 1.75rem;
-    --font-size-xl: 2rem;
-    --font-size-2xl: 2.25rem;
-    --font-size-3xl: 2.5rem;
+    --font-size-sm: .75rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 1.75rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.25rem;
 
     /**********************  font-weight ********************* */
     --font-weight-light: 300;
@@ -129,7 +130,7 @@ table {
     --font-weight-bold: 700;
 
     /**********************  line heights ********************* */
-    --line-height-tight: 1.2;
+    --line-height-tight: 1.25;
     --line-height-normal: 1.5;
     --line-height-loose: 1.75;
 
@@ -234,7 +235,7 @@ nav li a {
 nav a:hover, nav input:hover {
     background-color: var(--bloom);
     color: var(--dusk);
-    padding: 1rem 1.5rem;
+    
 }
 nav label {
     cursor: pointer;
@@ -245,10 +246,11 @@ a[title="PHXDW Homepage"] {
     position: absolute;
     top:0;
     left:0;
+    transition: var(--transition);
 }
 a[title="PHXDW Homepage"]:hover {
     background-color: transparent;
-    transition: none;
+    transform: var(--transform);
 }
 /**********************  hamburger background ********************* */
 nav label {
@@ -259,7 +261,7 @@ nav label {
 }
 /**********************  hamburger middle line ********************* */
 nav label span {
-    background-color: var(--white);
+    background-color: var(--bloom);
     display: block;
     height: .25rem;
     position: relative;
@@ -269,7 +271,7 @@ nav label span {
 }
 /**********************  hamburger top and bottom line ********************* */
 nav label span:before, nav label span:after {
-    background: var(--white);
+    background: var(--bloom);
     content: '';
     display: block;
     height: 100%;
@@ -324,11 +326,12 @@ header dl::after {
     margin: 1rem auto;
     position: relative;
     bottom: 1rem;
+    width: 124px;
+    height: 16px;
 }
 .no-mobile {
     display: none;
 }
-
 /**********************  main ********************* */
 main {
     grid-row: 4;
@@ -359,6 +362,8 @@ main {
     margin: 1rem auto;
     position: relative;
     bottom: 1rem;
+    width: 124px;
+    height: 16px;
 }
 #pricing dd {
     grid-row: 1/2;
@@ -397,6 +402,8 @@ main {
     margin: 1rem auto;
     position: relative;
     bottom: 1rem;
+    width: 124px;
+    height: 16px;
 }
 #keynotes section {
     margin: 3rem auto;
@@ -425,6 +432,8 @@ main {
     margin: 1rem auto;
     position: relative;
     bottom: 1rem;
+    width: 124px;
+    height: 16px;
 }
 #schedule ul {
     background-color: rgba(20, 30, 41, .6);
@@ -441,9 +450,6 @@ main {
     background-color: var(--copper);
     color: var(--bloom);
     grid-row:5;
-}
-#design-week a {
-
 }
 /********************** get-involved ********************* */
 #get-involved {
@@ -478,7 +484,7 @@ footer img {
     transition: var(--transition);
 }
 #sponsors-partners dd:hover {
-    transform: scale(1.15);
+    transform: var(--transform);
 }
 #connect {
     background-color: var(--mauve);
@@ -490,6 +496,7 @@ h1 {
     font-size: var(--font-size-3xl);
     color: var(--root);
     padding:var(--padding-lg);
+    line-height: var(--line-height-tight);
 }
 h1 span {
     display: inline-block;
@@ -519,6 +526,7 @@ h2 {
     font-size: var(--font-size-3xl);
     text-align: center;
     padding: 0 1rem;
+    line-height: var(--line-height-tight);
 } 
 h3, h4, .tagline {
     font-family: var(--font-accent);
@@ -526,6 +534,7 @@ h3, h4, .tagline {
     font-size: var(--font-size-lg);
     text-align: center;
     padding: 0 1rem;
+    line-height: var(--line-height-tight);
 }
 p, figcaption, small {
     font-family: var(--font-body);
@@ -551,7 +560,7 @@ a[title="Register for PHXDW 2025"], a[title="host an event"] {
 }
 a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
     background-color: var(--coal);
-    transform: scale(1.15);
+    transform: var(--transform);
 }
 a[title="host an event"] {
     background-color: var(--coal);
@@ -559,6 +568,7 @@ a[title="host an event"] {
 #pricing a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
     background-color: var(--citrus);
     color: var(--coal);
+    transform: var(--transform);
 }
 strong {
     font-weight: var(--font-weight-bold);
@@ -601,7 +611,7 @@ small {
     nav a:hover, nav input:hover {
         background-color: var(--coal);
         color: var(--bloom);
-        transform: scale(1.5);
+        transform: var(--transform);
     }
     nav label {
         background-color: transparent;
@@ -628,10 +638,12 @@ small {
     nav a[title="Register"]{
         background-color: var(--dusk);
         color: var(--bloom);
+        transition: var(--transition);
     }
     nav a[title="Register"]:hover {
-            background-color: var(--coal);
-            color: var(--bloom);
+        background-color: var(--coal);
+        color: var(--bloom);
+        transform: var(--transform);
     }
     a[title="PHXDW Homepage"] {
         top:-20px;
