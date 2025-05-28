@@ -226,6 +226,7 @@ nav li a {
     display:block;
     font-family: var(--font-accent);
     font-size: var(--font-size-md);
+    text-transform: uppercase;
     padding: 1rem;
     font-weight:var(--font-weight-bold);
     text-decoration:none;
@@ -255,7 +256,7 @@ a[title="PHXDW Homepage"]:hover {
 /**********************  hamburger background ********************* */
 nav label {
     background-color: var(--dusk);
-    border-radius: var(--border-radius);
+    border-radius: .75rem;
     padding: 1.5rem 1rem;
     margin: 1rem;
 }
@@ -316,7 +317,6 @@ nav input:checked ~ nav label:not(.steps) span:before, nav input:checked ~ nav l
 /**********************  header ********************* */
 header {
     background-color: var(--bloom);
-    display: grid;
     text-align: center;
     grid-row: 3;
 }
@@ -423,7 +423,6 @@ main {
     font-family: var(--font-accent);
     text-transform: uppercase;
     text-align: center;
-    color: var(--bloom);
 }
 .dates::after {
     content: url(images/squiggle-bloom.svg);
@@ -454,25 +453,20 @@ main {
 }
 /**********************  footer ********************* */
 footer {
+    background-color: var(--dusk);
+    color: var(--bloom);
     grid-row: 5;
 }
 footer img {
-    padding: var(--padding-lg);
+    padding: var(--padding-base);
     grid-row: 5;
 }
-#sponsors-partners {
-    background-color: var(--dusk);
+#sponsors-partners h3 {
+    color: var(--citrus);
+    font-family: var(--font-body);
+    text-transform: capitalize;
+    font-weight: var(--font-weight-bold);
 }
-#sponsors-partners dd {
-    transition: var(--transition);
-}
-#sponsors-partners dd:hover {
-    transform: var(--transform);
-}
-#connect {
-    background-color: var(--mauve);
-}
-
 /**********************  text ********************* */
 h1 {
     font-family: var(--font-accent);
@@ -495,18 +489,18 @@ h1 span {
 }
 header dl, #pricing dl {
     font-family: var(--font-accent);
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
     text-transform: uppercase;
     padding: var(--padding-base);
 }
 #pricing dl {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     text-align: center;
 }
 h2 {
     font-family: var(--font-heading);
     text-transform: uppercase;
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     text-align: center;
     padding: 0 1rem;
     line-height: var(--line-height-tight);
@@ -514,7 +508,7 @@ h2 {
 h3, h4, .tagline {
     font-family: var(--font-accent);
     text-transform: uppercase;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     text-align: center;
     padding: 0 1rem;
     line-height: var(--line-height-tight);
@@ -523,42 +517,7 @@ p, figcaption, small {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
-    margin: 1rem;
-}
-a[title="Register for PHXDW 2025"], a[title="host an event"], #get-involved a {
-    display: block;
-    text-align: center;
-    width: 90%;
-    background-color: var(--copper);
-    color: var(--bloom);
-    text-transform: uppercase;
-    font-family: var(--font-accent);
-    font-size: var(--font-size-xl);
-    border-radius: var(--border-radius);
-    margin: 5rem auto;
-    padding: var(--padding-base);
-    text-decoration: none;
-    line-height: var(--line-height-loose);
-    transition: var(--transition);
-}
-a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover, #get-involved a:hover {
-    background-color: var(--coal);
-    transform: var(--transform);
-}
-a[title="host an event"] {
-    background-color: var(--coal);
-}
-#get-involved a {
-    background-color: var(--citrus);
-    color: var(--coal);
-}
-#get-involved a:hover {
-    color: var(--citrus);
-}
-#pricing a[title="Register for PHXDW 2025"]:hover, a[title="host an event"]:hover {
-    background-color: var(--citrus);
-    color: var(--coal);
-    transform: var(--transform);
+    margin: var(--margin-base);
 }
 strong {
     font-weight: var(--font-weight-bold);
@@ -569,12 +528,37 @@ figcaption {
 }
 small {
     display: block;
-    font-size: .85em;
+    font-size: var(--font-size-sm);
     text-align: center;
-    margin: var(--margin-base);
 }
 #pricing p, #speakers p, #schedule p, #design-week p {
     padding: 3rem 0;
+}
+/**********************  Link Buttons  ********************* */
+header a, #pricing a, #design-week a, #get-involved a {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+    background-color: var(--copper);
+    color: var(--bloom);
+    font-family: var(--font-accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-md);
+    transition: var(--transition);
+}
+#design-week a {
+    background-color: var(--coal);
+}
+header a:hover, #pricing a:hover, #design-week a:hover, #get-involved a:hover {
+    background-color: var(--coal);
+    padding: 1rem 4rem;
+}
+#pricing a:hover {
+    background-color: var(--citrus);
+    color: var(--coal);
 }
 /**********************  Media Queries for announcement imgs  ********************* */
 @media screen and (max-width:425px) {
@@ -583,6 +567,7 @@ small {
     }
 }
 /**********************  Media Queries for Medium  ********************* */
+/*
 @media screen and (min-width:915px) {
     nav {
         margin: var(--margin-lg);
@@ -724,6 +709,7 @@ small {
     }
 }
 /**********************  Media Queries for Large ********************* */
+/*
 @media screen and (min-width:1300px) {
     header {
         display: grid;
@@ -775,6 +761,7 @@ small {
         margin: 0 auto;
     }
 }
+*/
 /* countdown 
 #countdown {
     background-color: var(--root);
