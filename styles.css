@@ -120,7 +120,7 @@ table {
     --font-size-md: 1.25rem;
     --font-size-lg: 1.5rem;
     --font-size-xl: 1.75rem;
-    --font-size-2xl: 2rem;
+    --font-size-2xl: 2.15rem;
     --font-size-3xl: 2.25rem;
 
     /**********************  font-weight ********************* */
@@ -340,11 +340,13 @@ main {
 
 /**********************  about ********************* */
 #about {
-    background-color: var(--cholla);
+    background-color: var(--root);
     grid-row: 1;
-    color: var(--coal);
+    color: var(--bloom);
 }
-
+#about div {
+    margin: 10rem;
+}
 /**********************  pricing ********************* */
 #pricing {
     background-color: var(--coal);
@@ -372,7 +374,7 @@ main {
     grid-row: 2/3;
 }
 /**********************  SPECIAL pricing ********************* */
-#early-bird {
+#discount {
     display: block;
     font-family: MangroveScriptRegular;
     text-align: center;
@@ -433,11 +435,21 @@ main {
     width: 124px;
     height: 16px;
 }
+#schedule ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
 #schedule li {
+    background-image: url(images/circle02.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
     font-family: var(--font-accent);
     text-transform: uppercase;
+    padding: 4rem 1rem;
     text-align: center;
-    padding: 1rem 0;
+    color: var(--dusk);
 }
 /**********************  design-week ********************* */
 #design-week {
@@ -457,15 +469,29 @@ footer {
     color: var(--bloom);
     grid-row: 5;
 }
-footer img {
-    padding: var(--padding-base);
-    grid-row: 5;
+#sponsors-partners h2 {
+    margin: 3rem 0;
+}
+#sponsors-partners img {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    transition: var(--transition);
 }
 #sponsors-partners h3 {
     color: var(--citrus);
     font-family: var(--font-body);
     text-transform: capitalize;
     font-weight: var(--font-weight-bold);
+    padding: var(--padding-base);
+}
+#connect {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    margin: 3rem auto;
+    text-align: center;
+    justify-content: center;
+    transition: var(--transition);
 }
 /**********************  text ********************* */
 h1 {
@@ -549,16 +575,37 @@ header a, #pricing a, #design-week a, #get-involved a {
     font-size: var(--font-size-md);
     transition: var(--transition);
 }
+header a {
+    padding: 1.32rem 3rem;
+}
+header a:hover {
+    padding: 1.32rem 4rem;
+}
 #design-week a {
     background-color: var(--coal);
 }
-header a:hover, #pricing a:hover, #design-week a:hover, #get-involved a:hover {
+#design-week a:hover {
+    background-color: var(--bloom);
+    color: var(--coal);
+    padding: 1rem 4rem;
+}
+#pricing a:hover, #get-involved a:hover {
     background-color: var(--coal);
     padding: 1rem 4rem;
 }
 #pricing a:hover {
     background-color: var(--citrus);
     color: var(--coal);
+}
+#connect a {
+    color: var(--bloom);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+}
+#sponsors-partners img:hover {
+    transform: scale(1.2);
 }
 /**********************  Media Queries for announcement imgs  ********************* */
 @media screen and (max-width:425px) {
