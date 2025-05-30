@@ -154,10 +154,10 @@ table {
 }
 body {
     display: grid;
-    grid-template-columns: 1fr;
 }
 header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, footer {
     padding: var(--padding-lg);
+    position: relative;
 }
 /**********************  Visually hidden text for screen readers only ********************* */
 .visually-hidden {
@@ -199,7 +199,7 @@ img[src="images/bird-feet.svg"] {
     right:1rem;
 }
 #announcements p {
-    font-family: MangroveSansBold;
+    font-family: var(--font-accent);
     font-size: var(--font-size-sm);
     text-align: center;
     text-transform: uppercase;
@@ -220,7 +220,7 @@ nav ul {
     overflow:hidden;
     text-align:center;
     max-height: 0;
-    background-color: var(--dusk);
+    background-color: var(--copper);
 }
 nav li a {
     display:block;
@@ -235,7 +235,7 @@ nav li a {
 }
 nav a:hover, nav input:hover {
     background-color: var(--bloom);
-    color: var(--dusk);
+    color: var(--copper);
     
 }
 nav label {
@@ -255,7 +255,7 @@ a[title="PHXDW Homepage"]:hover {
 }
 /**********************  hamburger background ********************* */
 nav label {
-    background-color: var(--dusk);
+    background-color: var(--copper);
     border-radius: .75rem;
     padding: 1.5rem 1rem;
     margin: 1rem;
@@ -320,32 +320,53 @@ header {
     text-align: center;
     grid-row: 3;
 }
-header dl::after {
-    content: url(images/squiggle-citrus.svg);
+header dl + img {
     display: block;
-    margin: 1rem auto;
+    margin: 2rem auto;
     position: relative;
-    bottom: 1rem;
-    width: 124px;
-    height: 16px;
+    bottom: 5rem;
 }
 .no-mobile {
     display: none;
+}
+dl > * {
+    transform: translateY(20px);
+    transition: transform 0.6s ease;
 }
 /**********************  main ********************* */
 main {
     grid-row: 4;
     display: grid;
 }
-
 /**********************  about ********************* */
 #about {
     background-color: var(--root);
     grid-row: 1;
     color: var(--bloom);
 }
-#about div {
-    margin: 10rem;
+#gallery {
+    text-align: center; /* centers inline-block children */
+}
+
+#gallery div {
+    display: inline-block; /* behaves like a centered block */
+    position: relative; 
+    width: 360px; 
+    height: 510px;
+    margin: 2rem;
+    vertical-align: top; /* keeps them aligned at the top */
+}
+
+#gallery iframe {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+#gallery div > * {
+    transform: translateY(20px);
+    transition: transform 0.6s ease;
 }
 /**********************  pricing ********************* */
 #pricing {
@@ -358,32 +379,33 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
 }
-#pricing dl::after  {
-    content: url(images/squiggle-citrus.svg);
-    display: block;
-    margin: 1rem auto;
-    position: relative;
-    bottom: 1rem;
-    width: 124px;
-    height: 16px;
-}
 #pricing dd {
     grid-row: 1/2;
 }
 #pricing dt {
     grid-row: 2/3;
 }
+#pricing dl::after {
+    content: url(images/squiggle-citrus.svg);
+    display: block;
+    margin: 1rem auto;
+    position: relative;
+    bottom: .5rem;
+    width: 124px;
+    height: 16px;
+}
 /**********************  SPECIAL pricing ********************* */
 #discount {
     display: block;
+    width: fit-content;
     font-family: MangroveScriptRegular;
     text-align: center;
     color: var(--citrus);
     font-size: var(--font-size-lg);
     transform: rotate(-10deg);
     position: relative;
-    top:3rem;
-    right:4rem;
+    top:5rem;
+    right:-1rem;
 }
 .price {
     text-decoration: line-through;
@@ -411,6 +433,14 @@ main {
     margin: 3rem auto;
     text-align: center;
 }
+#keynotes dl {
+    position: relative;
+    bottom: 1rem;
+}
+#keynotes img > * {
+    transform: translateY(20px);
+    transition: transform 0.6s ease;
+}
 .role {
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
@@ -435,6 +465,10 @@ main {
     width: 124px;
     height: 16px;
 }
+header .dates::after {
+    content: url(images/squiggle-citrus.svg);
+    bottom: 0;
+}
 #schedule ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -451,6 +485,10 @@ main {
     text-align: center;
     color: var(--dusk);
 }
+#schedule > * {
+    transform: translateY(20px);
+    transition: transform 0.6s ease;
+}
 /**********************  design-week ********************* */
 #design-week {
     background-color: var(--copper);
@@ -462,6 +500,9 @@ main {
     background-color: var(--root);
     color: var(--bloom);
     grid-row: 6;
+}
+#get-involved section {
+    padding: var(--padding-base);
 }
 /**********************  footer ********************* */
 footer {
@@ -545,6 +586,9 @@ p, figcaption, small {
     line-height: var(--line-height-normal);
     margin: var(--margin-base);
 }
+p {
+    margin: 1rem;
+}
 strong {
     font-weight: var(--font-weight-bold);
 }
@@ -556,9 +600,6 @@ small {
     display: block;
     font-size: var(--font-size-sm);
     text-align: center;
-}
-#pricing p, #speakers p, #schedule p, #design-week p {
-    padding: 3rem 0;
 }
 /**********************  Link Buttons  ********************* */
 header a, #pricing a, #design-week a, #get-involved a {
@@ -572,7 +613,7 @@ header a, #pricing a, #design-week a, #get-involved a {
     text-transform: uppercase;
     padding: 1rem 3rem;
     border-radius: var(--border-radius);
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-base);
     transition: var(--transition);
 }
 header a {
@@ -580,6 +621,7 @@ header a {
 }
 header a:hover {
     padding: 1.32rem 4rem;
+    background-color: var(--coal);
 }
 #design-week a {
     background-color: var(--coal);
@@ -607,32 +649,95 @@ header a:hover {
 #sponsors-partners img:hover {
     transform: scale(1.2);
 }
-/**********************  Media Queries for announcement imgs  ********************* */
-@media screen and (max-width:425px) {
-    #announcements img {
-        visibility: hidden;
+
+/**********************  Media Queries for Medium  ********************* */
+@media screen and (min-width:745px) {
+    header, #keynotes, #get-involved, #sponsors-partners, #community-partners {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        transition: grid-template-columns 0.5s ease;
+    }
+    h1, a, #gallery h3, #pricing h2, #pricing p, #pricing div, #keynotes h3, #get-involved h2, #sponsors-partners h2, #sponsors-partners svg, #creative-partners, #creative-partners h3, #community-partners, #community-partners h3 {
+        grid-column: 1/-1;
+    }
+    #keynotes img {
+        width: 300px;
+    }
+    dl > *, #gallery div > *, #keynotes img, #schedule {
+    transform: translateY(0);
+    }
+    #pricing {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        justify-content: center; 
+    }
+    #pricing dl {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    #keynotes dl {
+    bottom: 0;
+    }
+    #schedule ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #sponsors-partners svg {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    #creative-partners, #community-partners {
+        display: grid;
+    }
+    #creative-partners {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #connect {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #connect a {
+        transition: var(--transition);
+    }
+    #connect a:hover {
+        background-color: var(--mauve);
+        border-radius: var(--border-radius);
+        padding: 2rem 1rem 1rem;
+    }
+    #connect span {
+        position: relative;
+        bottom: .5rem;
     }
 }
-/**********************  Media Queries for Medium  ********************* */
-@media screen and (min-width:915px) {
+/**********************  Media Queries for Large  ********************* */
+@media screen and (min-width:945px) {
     nav {
         margin: var(--margin-lg);
     }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        background-color: transparent;
+        position: static;
+        max-height: none;
+        padding: 0;
+    }
     nav li a {
-        display:block;
-        font-family: var(--font-heading);
-        font-size: var(--font-size-md);
-        padding: 1rem;
-        font-weight:var(--font-weight-bold);
-        text-decoration:none;
-        border-radius: var(--border-radius);
-        color: var(--dusk);
+        display: inline-flex;
+        font-family: var(--font-accent);
+        font-size: .9em;
+        font-weight: var(--font-weight-medium);
+        color: var(--copper);
+        text-decoration: none;
         transition: var(--transition);
     }
     nav a:hover, nav input:hover {
         background-color: var(--coal);
         color: var(--bloom);
-        transform: var(--transform);
+        padding: 1rem 2rem;
+        border-radius: var(--border-radius);
     }
     nav label {
         background-color: transparent;
@@ -642,33 +747,23 @@ header a:hover {
         display: inline-block;
         user-select: none;
     }
-    nav ul {
-        overflow:visible;
-        position:absolute;
-        top: 1.5rem;
-        left:.5rem;
-        display: grid;
-        grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
-        gap: 1rem;
-        max-height: auto;
-        padding: 0 25px;
-    }
     nav label span, nav input {
         display:none;
     }
     nav a[title="Register"]{
-        background-color: var(--dusk);
+        background-color: var(--copper);
         color: var(--bloom);
+        border-radius: var(--border-radius);
         transition: var(--transition);
     }
     nav a[title="Register"]:hover {
         background-color: var(--coal);
         color: var(--bloom);
-        transform: var(--transform);
+        padding: 1rem 2rem;
     }
     a[title="PHXDW Homepage"] {
-        top:-20px;
-        left:25px;
+        top:-1.6rem;
+        left:-.5rem;
     }
     h1 {
         margin: var(--margin-lg);
@@ -686,16 +781,40 @@ header a:hover {
     header dt, header dd {
         display: inline-block;
     }
-    img[src="images/header-peaks.svg"] {
+    img[src="images/peaks.svg"] {
         display: block;
         position: absolute;
-        bottom: 15rem;
+        bottom: 28rem;
     }
-    img[src="images/countdown-dust-devil.svg"] {
+    img[src="images/dust-devil.svg"] {
         display: block;
         position: absolute;
         right:0;
-        bottom: 30rem;
+        top: -10rem;
+    }
+    img[src="images/bowls.svg"] {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0m;
+    }
+    img[src="images/wavy07.png"] {
+        display: block;
+        position: absolute;
+        left:0;
+        top: -5rem;
+    }
+    img[src="images/twisted07.svg"] {
+        display: block;
+        position: absolute;
+        right:0;
+        top: -5rem;
+    }
+    img[src="images/drum.svg"] {
+        display: block;
+        position: absolute;
+        left:0;
+        top: -6rem;
     }
     #pricing {
         display: grid;
@@ -719,42 +838,16 @@ header a:hover {
     #student-non-member {
         grid-column: 5/7;
     }
-    img[src="images/grow-waves.svg"] {
+    img[src="images/waves.svg"] {
         display: block;
         position: absolute;
-        top: -15rem;
+        top: -25rem;
     }
     #get-involved {
         position: relative;
     }
-    img[src="images/connect-bowls.png"] {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: -15rem;
-    }
-    footer {
-        position: relative;
-    }
-    img[src="images/footer-shapes30.png"] {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: -14rem;
-    }
-    img[src="images/footer-sponsor-twisted04.svg"] {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: -6rem;
-    }
-    p, small {
-        font-family: var(--font-body);
-        font-size: var(--font-size-lg);
-        line-height: var(--line-height-loose);
-    }
 }
-/**********************  Media Queries for Large ********************* */
+/**********************  Media Queries for X-Large ********************* */
 @media screen and (min-width:1300px) {
     header {
         display: grid;
