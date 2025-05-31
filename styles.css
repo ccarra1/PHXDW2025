@@ -549,7 +549,7 @@ header dl, #pricing dl {
     padding: var(--padding-base);
 }
 #pricing dl {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-base);
     text-align: center;
 }
 h2 {
@@ -829,11 +829,11 @@ header a:hover {
 /**********************  Media Queries for X-Large ********************* */
 @media screen and (min-width:1200px) {
     #price-chart {
-        grid-template-columns: 1fr 200px 200px 200px 200px 200px 1fr;
+        grid-template-columns: 1fr 210px 210px 210px 210px 210px 1fr;
     }
     #price-chart dd {
         position: relative;
-        bottom: -1.5rem;
+        bottom: 0;
     }
     #student-member {
         grid-column: 5/6;
