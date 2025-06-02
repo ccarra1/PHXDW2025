@@ -160,7 +160,7 @@ header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, foo
     position: relative;
 }
 /**********************  Visually hidden text for screen readers only ********************* */
-.visually-hidden {
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -337,8 +337,8 @@ main {
 #gallery div {
     display: inline-block; 
     position: relative; 
-    width: 360px; 
-    height: 510px;
+    width: 292px; 
+    height: 414px;
     margin: 2rem;
     vertical-align: top; 
 }
@@ -415,8 +415,9 @@ main {
     height: 16px;
 }
 #keynotes section {
-    margin: 3rem auto;
+    margin: 1rem auto;
     text-align: center;
+    width: 300px;
 }
 #keynotes dl {
     position: relative;
@@ -449,6 +450,9 @@ main {
     bottom: 1rem;
     width: 124px;
     height: 16px;
+}
+#schedule .dates {
+    padding: 3rem 0 1rem;
 }
 header .dates::after {
     content: url(images/squiggle-citrus.svg);
@@ -515,7 +519,7 @@ footer {
 }
 #connect {
     display: grid;
-    grid-template-columns: repeat(4, 80px);
+    grid-template-columns: repeat(4, 75px);
     padding: 5rem 0;
     margin: 0 auto;
     text-align: center;
