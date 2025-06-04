@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Christina Carrasquilla- The Brand Girls' Bakery">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>PHXDW 2025</title>
 
     <!-- Favicon -->
@@ -306,32 +306,6 @@
         </section>
         <small>Copyright © 2025 AIGA Arizona, a 501(c)(3) nonprofit organization. All Rights Reserved. Privacy Policy.</small>
     </footer>
-<script>
-    const targetDate = new Date("2025-05-31T11:59:59").getTime();
-
-    function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    
-    if (distance < 0) {
-        document.querySelector(".countdown").innerHTML = "Countdown Complete!";
-        return;
-    }
-    
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    document.getElementById("days").innerText = String(days).padStart(2, "0");
-    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
-    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
-    }
-    
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-</script>
 </body>
 </html>
 
@@ -362,4 +336,30 @@
             </div>
             <p>Get ready to reconnect, create, and grow at Arizona's biggest design celebration.</p>
         </section>
+        <script>
+    const targetDate = new Date("2025-05-31T11:59:59").getTime();
+
+    function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    
+    if (distance < 0) {
+        document.querySelector(".countdown").innerHTML = "Countdown Complete!";
+        return;
+    }
+    
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerText = String(days).padStart(2, "0");
+    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
     -->
