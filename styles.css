@@ -160,6 +160,24 @@ header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, foo
     position: relative;
 }
 /**********************  Visually hidden text for screen readers only ********************* */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--coal);
+    color: var(--bloom);
+    outline: 2px solid var(--citrus);
+    z-index: 1000;
+}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -169,6 +187,9 @@ header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, foo
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+a:focus{
+  outline: 2px solid var(--dusk);
 }
 /**********************  announcements ********************* */
 #announcements {
