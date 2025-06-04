@@ -152,30 +152,27 @@ table {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-body {
-    display: grid;
-}
 header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, footer {
     padding: var(--padding-lg);
     position: relative;
 }
 /**********************  Visually hidden text for screen readers only ********************* */
 .skip-link {
+    background-color: var(--coal);
     position: absolute;
-    left: -999px;
-    top: auto;
+    top: -3rem;
     width: 1px;
     height: 1px;
     overflow: hidden;
 }
 .skip-link:focus {
     position: static;
-    width: auto;
+    width: 100%;
     height: auto;
-    padding: 0.5rem 1rem;
-    background-color: var(--coal);
+    padding: 1rem;
+    background-color: var(--copper);
     color: var(--bloom);
-    outline: 2px solid var(--citrus);
+    outline: 2px solid var(--bloom);
     z-index: 1000;
 }
 .sr-only {
@@ -189,12 +186,12 @@ header, #about, #pricing, #speakers, #schedule, #design-week, #get-involved, foo
     border: 0;
 }
 a:focus{
-  outline: 2px solid var(--dusk);
+    outline: 3px solid var(--bloom);
 }
 /**********************  announcements ********************* */
 #announcements {
     background-color: var(--coal);
-    grid-row: 1;
+    padding: .5rem 0;
 }
 #announcements a {
     color: var(--bloom);
@@ -217,7 +214,6 @@ nav {
     background-color: var(--white);
     display: grid;
     justify-items: end;
-    grid-row: 2;
     position: relative;
 }
 nav ul {
@@ -326,7 +322,6 @@ nav input:checked ~ nav label:not(.steps) span:before, nav input:checked ~ nav l
 header {
     background-color: var(--bloom);
     text-align: center;
-    grid-row: 3;
 }
 header dl + img {
     display: block;
@@ -343,7 +338,6 @@ dl > * {
 }
 /**********************  main ********************* */
 main {
-    grid-row: 4;
     display: grid;
 }
 /**********************  about ********************* */
@@ -520,7 +514,6 @@ header .dates::after {
 footer {
     background-color: var(--dusk);
     color: var(--bloom);
-    grid-row: 5;
 }
 #sponsors-partners h2 {
     margin: 3rem 0;
